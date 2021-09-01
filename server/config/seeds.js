@@ -7,8 +7,8 @@ db.once('open', async () => {
     await Question.insertMany([
         {
             _id: "1",
-            category: "Test Category",
-            phrase: "TEST",
+            category: "Scott Quotes",
+            phrase: "QUOTES AROUND THE KEYS",
             value: 200,
         },
     ]);
