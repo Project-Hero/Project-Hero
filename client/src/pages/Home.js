@@ -1,10 +1,12 @@
 import React from "react";
 
+import QuickplayButton from "../components/QuickplayButton";
+
 const Home = () => {
   return (
       <div>
         <h1>Title Placeholder</h1>
-        <button id='startButton'>Quick Play</button>
+        <QuickplayButton />
     </div>
   );
 };

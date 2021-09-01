@@ -1,4 +1,5 @@
 //change profiles
-const Profile = require('./Profile');
+const Question = require('./Question.js');
 
-module.exports = { Profile };
+
+module.exports = { Question };
