@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
+import GameBoard from '../GameBoard';
 
 export default function Quickplay() {
-    let [question, showQuestion] = useState();
+    let [isPlaying, setIsPlaying] = useState(false);
 
     const handleClick = () => {
-        console.log("You clicked quickplay!")
+        setIsPlaying(true);
+        // display only if NOT isPlaying
     };
 
     return (
-        <button onClick={handleClick}>Quick Play</button>
-    )
-
+      <div>
+        {isPlaying ?
+            <GameBoard /> :
+            <div>
+                <button onClick={handleClick}>Quick Play</button>
+                <h1> Click...if you Dare! </h1>
+            </div>}
+      </div>
+    );
 }
