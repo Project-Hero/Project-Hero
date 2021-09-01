@@ -7,8 +7,11 @@ const { Question } = require('../models');
 const resolvers = {
   Query: {
     questions: async () => {
-      return await Question.find({});
+      return await Question.find();
     },
+    // question: async (parent, { questionId }) => {
+    //   return await Question.findOne({ _id: questionId });
+    // },
   },
 };
 

@@ -8,12 +8,14 @@ db.once('open', async () => {
         {
             _id: "1",
             category: "Test Category",
-            phrase: ["t", "e", "s", "t"],
+            phrase: "TEST",
             value: 200,
         },
     ]);
 
     console.log('questions seeded');
 
-    await Question.deleteMany();
+
 });
+
+  // await Question.deleteMany();
