@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_QUESTIONS } from "../../utils/queries";
 
+import Card from './../Card';
+
 export default function GameBoard() {
   const [phrase, setPhrase] = useState([]);
   const [blanksLetters, setBlankLetters] = useState([]);
@@ -10,7 +12,6 @@ export default function GameBoard() {
   const [hidden, setHidden] = useState({});
   const handleBlanks = (index) => {
     setPhrase(questions[index].phrase.split(""));
-
 
 
     setHidden({ ...hidden, [index]: !hidden[index] });
@@ -39,24 +40,23 @@ export default function GameBoard() {
       console.log("The sky is your limit👀");
     }
   };
-  return (
+
+
+
+  return loading ? <h1>Loading...</h1> : (
+
     <div tabIndex="0" onKeyDown={handleAnswer}>
       {questions &&
         questions.map((question, index) => (
-          <div key={question._id}>
-            <div onClick={(e) => handleBlanks(index)} className="col-12 col-xl">
-              <div className="card mb-4">
-                <h4 className="card-header bg-dark text-light p-2 m-0 center">
-                  {question.category} <br />
-                </h4>
-                <h4 className="card-header bg-primary text-light p-2 m-0 center">
-                  ${question.value} <br />
-                </h4>
-              </div>
-            </div>
-            <h4>{!hidden[index] && blanksLetters}</h4>
-          </div>
+          <Card
+            question={question}
+            blanksLetters={blanksLetters}
+            handleBlanks={handleBlanks}
+            index={index}
+            hidden={hidden}
+          />
         ))}
+      <h4>{phrase}</h4>
     </div>
   );
 }
