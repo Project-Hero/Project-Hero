@@ -8,13 +8,13 @@ db.once('open', async () => {
       {
         _id: "1",
         category: "Scott Quotes",
-        phrase: "QUOTES AROUND THE KEYS",
+        phrase: "QUOTESAROUNDTHEKEYSsssss",
         value: 200,
       },
       {
         _id: "2",
         category: "Scott Quotes",
-        phrase: "LAST SPIN OF THE NIGHT",
+        phrase: "LASTSPINOFTHENIGHT",
         value: 400,
       },
     ]);
