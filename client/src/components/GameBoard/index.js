@@ -32,8 +32,23 @@ export default function GameBoard() {
 
 
   const handleAnswer = (event) => {
-    console.log('event.key', event.key);
-    
+    let numBlanks = phrase.length;
+    let key = event.key.toUpperCase();
+    console.log('key', key);
+    let letterInWord = false;
+  for (let i = 0; i < numBlanks; i++) {
+    if (phrase[i] === key) {
+      letterInWord = true;
+    }
+  }
+  if (letterInWord) {
+    for (let j = 0; j < numBlanks; j++) {
+      if (phrase[j] === key) {
+        blanksLetters[j] = key;
+      }
+    }
+    console.log(phrase);
+  }
   };
 
   return loading ? (

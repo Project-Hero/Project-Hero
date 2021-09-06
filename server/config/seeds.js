@@ -8,7 +8,7 @@ db.once('open', async () => {
       {
         _id: "1",
         category: "Scott Quotes",
-        phrase: "QUOTESAROUNDTHEKEYSsssss",
+        phrase: "QUOTESAROUNDTHEKEYS",
         value: 200,
       },
       {
