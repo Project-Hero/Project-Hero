@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
-import { QUERY_QUESTIONS } from "../../utils/queries";
+import Spinner from 'react-bootstrap/Spinner';
 
 import Card from './../Card';
+import { QUERY_QUESTIONS } from "../../utils/queries";
 
 export default function GameBoard() {
   const [phrase, setPhrase] = useState([]);
@@ -63,7 +64,7 @@ export default function GameBoard() {
   }
 
   return loading ? (
-    <h1>Loading...</h1>
+    <Spinner animation="border" variant="info" />
   ) : (
     <div tabIndex="0" onKeyDown={handleAnswer}>
       {questions &&
