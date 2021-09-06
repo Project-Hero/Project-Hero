@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default function Card({question, handleBlanks, index, blanksLetters, hidden}) {
+export default function Card({question, handleBlanks, index, hidden}) {
     return (
       <div key={question._id}>
         <div onClick={(e) => handleBlanks(index)} className="col-12 col-xl">

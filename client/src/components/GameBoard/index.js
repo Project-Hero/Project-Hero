@@ -47,9 +47,20 @@ export default function GameBoard() {
         blanksLetters[j] = key;
       }
     }
+    setBlankLetters(blanksLetters);
     console.log(phrase);
+    console.log(blanksLetters);
+    checkWin(phrase, blanksLetters);
   }
   };
+
+  const checkWin = (phrase, blanksLetters) => {
+    // If the word equals the blankLetters array when converted to string, set isWin to true
+    //phrase is an array
+    if (phrase.join("") === blanksLetters.join("")) {
+      console.log("you've won!");
+} else {console.log("keep trying")};
+  }
 
   return loading ? (
     <h1>Loading...</h1>
@@ -59,7 +70,6 @@ export default function GameBoard() {
         questions.map((question, index) => (
           <Card
             question={question}
-            blanksLetters={blanksLetters}
             handleBlanks={handleBlanks}
             index={index}
             hidden={hidden}
