@@ -14,7 +14,7 @@ export default function Card({question, handleBlanks, index, blanksLetters, hidd
             </h4>
           </div>
         </div>
-        <h4>{!hidden[index] && blanksLetters}</h4>
+        <h4>{!hidden[index]}</h4>
       </div>
     );
 };

@@ -32,19 +32,13 @@ export default function GameBoard() {
 
 
   const handleAnswer = (event) => {
-    console.log('event', event);
     console.log('event.key', event.key);
-    if (event.key === "y") {
-      console.log("The sky is your starting point!");
-    } else if (event.key === "n") {
-      console.log("The sky is your limit👀");
-    }
+    
   };
 
-
-
-  return loading ? <h1>Loading...</h1> : (
-
+  return loading ? (
+    <h1>Loading...</h1>
+  ) : (
     <div tabIndex="0" onKeyDown={handleAnswer}>
       {questions &&
         questions.map((question, index) => (
@@ -56,7 +50,7 @@ export default function GameBoard() {
             hidden={hidden}
           />
         ))}
-      <h4>{phrase}</h4>
+      <h4>{blanksLetters}</h4>
     </div>
   );
 }
