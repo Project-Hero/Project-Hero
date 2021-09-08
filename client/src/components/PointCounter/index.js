@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function PointCounter({question}) {
+export default function PointCounter({ score }) {
   return (
-      <div>
-        <h2>question.value</h2>
-     </div>
+    <div>
+      <h2>Score {score}</h2>
+    </div>
   );
 }

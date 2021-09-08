@@ -12,7 +12,6 @@ import { setContext } from "@apollo/client/link/context";
 import Home from './pages/Home';
 import MyNavbar from "./components/Navbar/Navbar";
 
-
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -32,12 +31,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <MyNavbar />
+        <MyNavbar />
         <Route exact path="/" component={Home} />
       </Router>
     </ApolloProvider>
