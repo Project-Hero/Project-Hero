@@ -102,19 +102,77 @@ export default function GameBoard() {
     }
   };
 
+  const scottQuoteQuestions = questions.filter(
+    (question) => question.category === "Scott Quotes"
+  );
+
+    const classQuestions = questions.filter(
+      (question) => question.category === "Class Quotes"
+    );
+
+    const grabBagQuestions = questions.filter(
+      (question) => question.category === "Grab Bag"
+    );
+
+    const buzzWordQuestions = questions.filter(
+      (question) => question.category === "Bootcamp Buzzwords"
+    );
+
+
   return loading ? (
     <Spinner animation="border" variant="info" />
   ) : (
-    <div tabIndex="0" onKeyDown={handleAnswer}>
-      {questions &&
-        questions.map((question, index) => (
-          <Card
-            question={question}
-            handleBlanks={handleBlanks}
-            index={index}
-            hidden={hidden}
-          />
-        ))}
+    <>
+      <div className="d-f" tabIndex="0" onKeyDown={handleAnswer}>
+        <div className="col-3 col-md">
+          <h2>Scott Quotes</h2>
+          {scottQuoteQuestions.map((question, index) => (
+            <Card
+              key={question.id}
+              question={question}
+              handleBlanks={handleBlanks}
+              index={index}
+              hidden={hidden}
+            />
+          ))}
+        </div>
+        <div className="col-3 col-md">
+          <h2>Buzzwords</h2>
+          {buzzWordQuestions.map((question, index) => (
+            <Card
+              key={question.id}
+              question={question}
+              handleBlanks={handleBlanks}
+              index={index}
+              hidden={hidden}
+            />
+          ))}
+        </div>
+        <div className="col-3 col-md">
+          <h2>Class Quotes</h2>
+          {classQuestions.map((question, index) => (
+            <Card
+              key={question.id}
+              question={question}
+              handleBlanks={handleBlanks}
+              index={index}
+              hidden={hidden}
+            />
+          ))}
+        </div>
+        <div className="col-3 col-md">
+          <h2>Grab Bag</h2>
+          {grabBagQuestions.map((question, index) => (
+            <Card
+              key={question.id}
+              question={question}
+              handleBlanks={handleBlanks}
+              index={index}
+              hidden={hidden}
+            />
+          ))}
+        </div>
+      </div>
       <Test key={updatedAt} blanksLetters={blanksLetters} />
       <div>
         <PointCounter score={score} />
@@ -122,6 +180,6 @@ export default function GameBoard() {
       <div>
         <KeysPressed key={updatedAt} guessedKeys={guessedKeys} />
       </div>
-    </div>
+    </>
   );
 }
