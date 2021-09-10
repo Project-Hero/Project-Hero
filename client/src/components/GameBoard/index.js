@@ -42,18 +42,15 @@ export default function GameBoard() {
     }
     setBlankLetters(blanksLetters);
     // Converts blankLetters array into a string and renders it on the screen
-    console.log(blanksLetters);
   }, [phrase]);
 
   useEffect(() => {
-    console.log("second useeffect");
   }, [blanksLetters]);
 
   const showKeys = (key) => {
     let alphabetCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     if (alphabetCharacters.includes(key) && !guessedKeys.includes(key)) {
       guessedKeys.push(key);
-      console.log(guessedKeys);
     } else {
       return
     }
@@ -65,7 +62,6 @@ export default function GameBoard() {
       setUpdatedAt(Date.now());
       let numBlanks = phrase.length;
       let key = event.key.toUpperCase();
-      console.log("key", key);
       showKeys(key);
       let letterInWord = false;
       for (let i = 0; i < numBlanks; i++) {
@@ -80,8 +76,6 @@ export default function GameBoard() {
           }
         }
         setBlankLetters(blanksLetters);
-        console.log(phrase);
-        console.log(blanksLetters);
         checkWin(phrase, blanksLetters);
       }
     }
@@ -91,14 +85,13 @@ export default function GameBoard() {
     // If the word equals the blankLetters array when converted to string, set isWin to true
     //phrase is an array
     if (phrase.join("") === blanksLetters.join("")) {
-      console.log("you've won!");
       // award points & disable card
       score = score + activeQuestion.value;
       setWon(true);
 
 
     } else {
-      console.log("keep trying");
+
     }
   };
 

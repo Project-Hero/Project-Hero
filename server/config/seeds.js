@@ -127,9 +127,6 @@ db.once('open', async () => {
       },
     ]);
 
-    console.log('questions seeded');
-
-
 });
 
-  
+
