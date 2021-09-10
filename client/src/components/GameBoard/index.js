@@ -12,7 +12,13 @@ let guessedKeys = [];
 let activeQuestion = {};
 
 function Test(props) {
-  return <div>{props.blanksLetters}</div>;
+  return <div>{props.blanksLetters.map(character => {
+    if (character === "    ") {
+      return <span>{character}&nbsp;&nbsp;</span>;
+    } else {
+      return <span>{character}</span>;
+    }
+  })}</div>;
 }
 
 export default function GameBoard() {
@@ -33,11 +39,16 @@ export default function GameBoard() {
   };
 
   useEffect(() => {
-    let numBlanks = phrase.length;
+
     let blanksLetters = [];
     // Uses loop to push blanks to blankLetters array
-    for (var i = 0; i < numBlanks; i++) {
-      blanksLetters.push("_  ");
+    for (var i = 0; i < phrase.length; i++) {
+      if (phrase[i] === ' ') {
+        blanksLetters.push("    ");
+        console.log(phrase[i]);
+      } else {
+        blanksLetters.push("_  ");
+      }
     }
     setBlankLetters(blanksLetters);
     // Converts blankLetters array into a string and renders it on the screen
@@ -81,7 +92,10 @@ export default function GameBoard() {
   const checkWin = (phrase, blanksLetters) => {
     // If the word equals the blankLetters array when converted to string, set isWin to true
     //phrase is an array
-    if (phrase.join("") === blanksLetters.join("")) {
+    if (
+      phrase.join("").replaceAll(" ", "") ===
+      blanksLetters.join("").replaceAll(" ", "")
+    ) {
       // award points & disable card
       score = score + activeQuestion.value;
       setWon(true);
@@ -93,25 +107,23 @@ export default function GameBoard() {
     (question) => question.category === "Scott Quotes"
   );
 
-  console.log("scott quotes", scottQuoteQuestions);
+
 
   const classQuestions = questions.filter(
     (question) => question.category === "Class Quotes"
   );
 
-  console.log("class quotes", classQuestions);
+
 
   const grabBagQuestions = questions.filter(
     (question) => question.category === "Grab Bag"
   );
 
-  console.log("grab bag", grabBagQuestions);
 
   const buzzWordQuestions = questions.filter(
     (question) => question.category === "Bootcamp Buzzwords"
   );
 
-  console.log("buzz word", buzzWordQuestions);
 
   return loading ? (
     <Spinner animation="border" variant="info" />
