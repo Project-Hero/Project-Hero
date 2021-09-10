@@ -4,19 +4,34 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 
 export const MyNavbar = () => {
-    return (
-        <>
-<Navbar bg="primary" variant="dark">
-<Container>
-<Navbar.Brand href="#home">No Dork Left Behind</Navbar.Brand>
-<Nav className="ml-auto">
-  <Nav.Link href="#home">Home</Nav.Link>
-  <Nav.Link href="#features">Features</Nav.Link>
-  <Nav.Link href="#pricing">Pricing</Nav.Link>
-</Nav>
-</Container>
-</Navbar>
-</>
+  return (
+    <>
+      <Navbar
+        bg="primary"
+        variant="dark"
+        expand="md"
+        className="justify-content-between"
+      >
+        <Container>
+          <Navbar.Brand href="https://project-hero-jwh.herokuapp.com/">
+            No Dork Left Behind
+          </Navbar.Brand>
+          <Nav className="ml-auto">
+            <Nav.Link href="https://project-hero-jwh.herokuapp.com/">
+              Home
+            </Nav.Link>
+            <Nav.Link href="https://github.com/sbrunswig">
+              The Man the Myth the Legend
+            </Nav.Link>
+            <Nav.Link href="https://github.com/Project-Hero/Project-Hero">
+              GitHub Docs
+            </Nav.Link>
+            <Nav.Link href="v2.0">Tip Developers</Nav.Link>
+            <Nav.Link href="v2.0">Log In</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 

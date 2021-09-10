@@ -38,8 +38,8 @@
 }
 
 .card:hover {
-    opacity: 0.5;
-    cursor: pointer;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .d-f {
@@ -60,7 +60,7 @@
 
 .category-style {
   background-color: black;
-  color: #FFC107;
+  color: #ffc107;
   border: 1px solid white;
 }
 
@@ -74,4 +74,16 @@
   border: 3px solid hotpink;
   display: flex;
   flex-direction: column;
+}
+
+.hero {
+  background-image: url("https://avatars.githubusercontent.com/u/955212?v=4");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.blank-text {
+  font-size: xx-large;
 }

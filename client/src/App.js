@@ -1,15 +1,15 @@
-import './App.css';
-import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   ApolloClient,
   ApolloProvider,
   createHttpLink,
   InMemoryCache,
-} from '@apollo/client';
+} from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from './pages/Home';
+import Home from "./pages/Home";
 import MyNavbar from "./components/Navbar/Navbar";
 
 const httpLink = createHttpLink({

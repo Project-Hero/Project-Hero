@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from "react-bootstrap/Spinner";
 
-import Card from './../Card';
+import MyCard from "./../Card/cardIndex";
 import { QUERY_QUESTIONS } from "../../utils/queries";
 import PointCounter from "./../PointCounter";
 import KeysPressed from "./../KeysPressed";
@@ -30,7 +30,6 @@ export default function GameBoard() {
   const [hidden, setHidden] = useState({});
   const [updatedAt, setUpdatedAt] = useState(Date.now());
 
-
   const handleBlanks = (index) => {
     setWon(false);
     guessedKeys = [];
@@ -55,15 +54,14 @@ export default function GameBoard() {
     // Converts blankLetters array into a string and renders it on the screen
   }, [phrase]);
 
-  useEffect(() => {
-  }, [blanksLetters]);
+  useEffect(() => {}, [blanksLetters]);
 
   const showKeys = (key) => {
     let alphabetCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     if (alphabetCharacters.includes(key) && !guessedKeys.includes(key)) {
       guessedKeys.push(key);
     } else {
-      return
+      return;
     }
   };
 
@@ -111,22 +109,20 @@ export default function GameBoard() {
 
 
 
-    const classQuestions = questions.filter(
-      (question) => question.category === "Class Quotes"
-    );
+  const classQuestions = questions.filter(
+    (question) => question.category === "Class Quotes"
+  );
 
 
 
-    const grabBagQuestions = questions.filter(
-      (question) => question.category === "Grab Bag"
-    );
+  const grabBagQuestions = questions.filter(
+    (question) => question.category === "Grab Bag"
+  );
 
 
-
-    const buzzWordQuestions = questions.filter(
-      (question) => question.category === "Bootcamp Buzzwords"
-    );
-
+  const buzzWordQuestions = questions.filter(
+    (question) => question.category === "Bootcamp Buzzwords"
+  );
 
 
   return loading ? (
@@ -137,7 +133,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Scott Quotes</h2>
           {scottQuoteQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -149,7 +145,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Buzzwords</h2>
           {buzzWordQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -161,7 +157,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Class Quotes</h2>
           {classQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -173,7 +169,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Grab Bag</h2>
           {grabBagQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -183,7 +179,11 @@ export default function GameBoard() {
           ))}
         </div>
       </div>
-      <Test key={updatedAt} blanksLetters={blanksLetters} />
+      <Test
+        key={updatedAt}
+        blanksLetters={blanksLetters}
+        className="blank-text"
+      />
       <div>
         <PointCounter score={score} />
       </div>
