@@ -167,7 +167,11 @@ export default function GameBoard() {
           ))}
         </div>
       </div>
-      <Test key={updatedAt} blanksLetters={blanksLetters} />
+      <Test
+        key={updatedAt}
+        blanksLetters={blanksLetters}
+        className="blank-text"
+      />
       <div>
         <PointCounter score={score} />
       </div>
