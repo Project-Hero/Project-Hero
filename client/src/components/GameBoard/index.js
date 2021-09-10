@@ -99,18 +99,25 @@ export default function GameBoard() {
     (question) => question.category === "Scott Quotes"
   );
 
+  console.log("scott quotes", scottQuoteQuestions);
+
     const classQuestions = questions.filter(
       (question) => question.category === "Class Quotes"
     );
+
+  console.log("class quotes", classQuestions);
 
     const grabBagQuestions = questions.filter(
       (question) => question.category === "Grab Bag"
     );
 
+    console.log("grab bag", grabBagQuestions);
+
     const buzzWordQuestions = questions.filter(
       (question) => question.category === "Bootcamp Buzzwords"
     );
 
+    console.log("buzz word", buzzWordQuestions);
 
   return loading ? (
     <Spinner animation="border" variant="info" />
@@ -136,7 +143,7 @@ export default function GameBoard() {
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
-              index={index}
+              index={index + 15}
               hidden={hidden}
             />
           ))}
@@ -148,7 +155,7 @@ export default function GameBoard() {
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
-              index={index}
+              index={index + 5}
               hidden={hidden}
             />
           ))}
@@ -160,7 +167,7 @@ export default function GameBoard() {
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
-              index={index}
+              index={index + 10}
               hidden={hidden}
             />
           ))}
