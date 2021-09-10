@@ -8,31 +8,31 @@ db.once('open', async () => {
       {
         _id: "1",
         category: "Scott Quotes",
-        phrase: "SHARE YOUR SCREEN",
+        phrase: "SHAREYOURSCREEN",
         value: 200,
       },
       {
         _id: "2",
         category: "Scott Quotes",
-        phrase: "QUOTES AROUND THE KEYS",
+        phrase: "QUOTESAROUNDTHEKEYS",
         value: 400,
       },
       {
         _id: "3",
         category: "Scott Quotes",
-        phrase: "KEY VALUE",
+        phrase: "KEYVALUE",
         value: 600,
       },
       {
         _id: "4",
         category: "Scott Quotes",
-        phrase: "LAST SPIN OF THE NIGHT",
+        phrase: "LASTSPINOFTHENIGHT",
         value: 800,
       },
       {
         _id: "5",
         category: "Scott Quotes",
-        phrase: "WHOSE DOG IS THAT",
+        phrase: "WHOSEDOGISTHAT",
         value: 1000,
       },
       {
@@ -44,7 +44,7 @@ db.once('open', async () => {
       {
         _id: "7",
         category: "Class Quotes",
-        phrase: "HOT PINK",
+        phrase: "HOTPINK",
         value: 400,
       },
       {
@@ -56,13 +56,13 @@ db.once('open', async () => {
       {
         _id: "9",
         category: "Class Quotes",
-        phrase: "DORK CODE",
+        phrase: "DORKCODE",
         value: 800,
       },
       {
         _id: "10",
         category: "Class Quotes",
-        phrase: "TRAVERSE THE DOM",
+        phrase: "TRAVERSETHEDOM",
         value: 1000,
       },
       {
@@ -80,7 +80,7 @@ db.once('open', async () => {
       {
         _id: "13",
         category: "Grab Bag",
-        phrase: "MAC OR PC",
+        phrase: "MACVSPC",
         value: 600,
       },
       {
@@ -92,7 +92,7 @@ db.once('open', async () => {
       {
         _id: "15",
         category: "Grab Bag",
-        phrase: "FULL STACK",
+        phrase: "FULLSTACK",
         value: 1000,
       },
       {
@@ -116,13 +116,13 @@ db.once('open', async () => {
       {
         _id: "19",
         category: "Bootcamp Buzzwords",
-        phrase: "BOX TOPS",
+        phrase: "BOXTOPS",
         value: 800,
       },
       {
         _id: "20",
         category: "Bootcamp Buzzwords",
-        phrase: "DAVID BLAINE",
+        phrase: "DAVIDBLAINE",
         value: 1000,
       },
     ]);
@@ -132,4 +132,4 @@ db.once('open', async () => {
 
 });
 
-  // await Question.deleteMany();
+  

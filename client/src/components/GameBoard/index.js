@@ -9,12 +9,14 @@ import KeysPressed from "./../KeysPressed";
 
 let score = 0;
 let guessedKeys = [];
+let activeQuestion = {};
 
 function Test(props) {
   return <div>{props.blanksLetters}</div>;
 }
 
 export default function GameBoard() {
+  const [hasWon, setWon] = useState(false);
   const [phrase, setPhrase] = useState([]);
   const [blanksLetters, setBlankLetters] = useState([]);
   const { loading, data } = useQuery(QUERY_QUESTIONS);
@@ -22,18 +24,11 @@ export default function GameBoard() {
   const [hidden, setHidden] = useState({});
   const [updatedAt, setUpdatedAt] = useState(Date.now());
 
-  function getKeyByValue(object, value) {
-    for (var prop in object) {
-      if (object.hasOwnProperty(prop)) {
-        if (object[prop] === value) return prop;
-      }
-    }
-  }
-
-  let activeQuestionIndex = getKeyByValue(hidden, true);
-  let activeQuestion = questions[activeQuestionIndex];
 
   const handleBlanks = (index) => {
+    setWon(false);
+    guessedKeys = [];
+    activeQuestion = questions[index];
     setPhrase(questions[index].phrase.split(""));
     setHidden({ ...hidden, [index]: !hidden[index] });
   };
@@ -60,32 +55,35 @@ export default function GameBoard() {
       guessedKeys.push(key);
       console.log(guessedKeys);
     } else {
-      alert("Already guessed!");
+      return
     }
   };
 
+
   const handleAnswer = (event) => {
-    setUpdatedAt(Date.now());
-    let numBlanks = phrase.length;
-    let key = event.key.toUpperCase();
-    console.log("key", key);
-    showKeys(key);
-    let letterInWord = false;
-    for (let i = 0; i < numBlanks; i++) {
-      if (phrase[i] === key) {
-        letterInWord = true;
-      }
-    }
-    if (letterInWord) {
-      for (let j = 0; j < numBlanks; j++) {
-        if (phrase[j] === key) {
-          blanksLetters[j] = key;
+    if (!hasWon) {
+      setUpdatedAt(Date.now());
+      let numBlanks = phrase.length;
+      let key = event.key.toUpperCase();
+      console.log("key", key);
+      showKeys(key);
+      let letterInWord = false;
+      for (let i = 0; i < numBlanks; i++) {
+        if (phrase[i] === key) {
+          letterInWord = true;
         }
       }
-      setBlankLetters(blanksLetters);
-      console.log(phrase);
-      console.log(blanksLetters);
-      checkWin(phrase, blanksLetters);
+      if (letterInWord) {
+        for (let j = 0; j < numBlanks; j++) {
+          if (phrase[j] === key) {
+            blanksLetters[j] = key;
+          }
+        }
+        setBlankLetters(blanksLetters);
+        console.log(phrase);
+        console.log(blanksLetters);
+        checkWin(phrase, blanksLetters);
+      }
     }
   };
 
@@ -96,7 +94,9 @@ export default function GameBoard() {
       console.log("you've won!");
       // award points & disable card
       score = score + activeQuestion.value;
-      console.log(score);
+      setWon(true);
+
+
     } else {
       console.log("keep trying");
     }
