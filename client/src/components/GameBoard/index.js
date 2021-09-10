@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from "react-bootstrap/Spinner";
 
-import Card from './../Card';
+import MyCard from "./../Card/cardIndex";
 import { QUERY_QUESTIONS } from "../../utils/queries";
 import PointCounter from "./../PointCounter";
 import KeysPressed from "./../KeysPressed";
@@ -24,7 +24,6 @@ export default function GameBoard() {
   const [hidden, setHidden] = useState({});
   const [updatedAt, setUpdatedAt] = useState(Date.now());
 
-
   const handleBlanks = (index) => {
     setWon(false);
     guessedKeys = [];
@@ -44,18 +43,16 @@ export default function GameBoard() {
     // Converts blankLetters array into a string and renders it on the screen
   }, [phrase]);
 
-  useEffect(() => {
-  }, [blanksLetters]);
+  useEffect(() => {}, [blanksLetters]);
 
   const showKeys = (key) => {
     let alphabetCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
     if (alphabetCharacters.includes(key) && !guessedKeys.includes(key)) {
       guessedKeys.push(key);
     } else {
-      return
+      return;
     }
   };
-
 
   const handleAnswer = (event) => {
     if (!hasWon) {
@@ -88,10 +85,7 @@ export default function GameBoard() {
       // award points & disable card
       score = score + activeQuestion.value;
       setWon(true);
-
-
     } else {
-
     }
   };
 
@@ -101,23 +95,23 @@ export default function GameBoard() {
 
   console.log("scott quotes", scottQuoteQuestions);
 
-    const classQuestions = questions.filter(
-      (question) => question.category === "Class Quotes"
-    );
+  const classQuestions = questions.filter(
+    (question) => question.category === "Class Quotes"
+  );
 
   console.log("class quotes", classQuestions);
 
-    const grabBagQuestions = questions.filter(
-      (question) => question.category === "Grab Bag"
-    );
+  const grabBagQuestions = questions.filter(
+    (question) => question.category === "Grab Bag"
+  );
 
-    console.log("grab bag", grabBagQuestions);
+  console.log("grab bag", grabBagQuestions);
 
-    const buzzWordQuestions = questions.filter(
-      (question) => question.category === "Bootcamp Buzzwords"
-    );
+  const buzzWordQuestions = questions.filter(
+    (question) => question.category === "Bootcamp Buzzwords"
+  );
 
-    console.log("buzz word", buzzWordQuestions);
+  console.log("buzz word", buzzWordQuestions);
 
   return loading ? (
     <Spinner animation="border" variant="info" />
@@ -127,7 +121,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Scott Quotes</h2>
           {scottQuoteQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -139,7 +133,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Buzzwords</h2>
           {buzzWordQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -151,7 +145,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Class Quotes</h2>
           {classQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -163,7 +157,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Grab Bag</h2>
           {grabBagQuestions.map((question, index) => (
-            <Card
+            <MyCard
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
