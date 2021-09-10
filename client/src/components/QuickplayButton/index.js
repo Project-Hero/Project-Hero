@@ -14,7 +14,7 @@ export default function Quickplay() {
         {isPlaying ? (
           <GameBoard />
         ) : (
-          <div>
+          <div className="d-f jc-c">
             <button className="btn btn-warning" onClick={handleClick}>Quick Play</button>
           </div>
         )}

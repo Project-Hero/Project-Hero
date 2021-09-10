@@ -118,7 +118,7 @@ export default function GameBoard() {
     <>
       <div className="d-f" tabIndex="0" onKeyDown={handleAnswer}>
         <div className="col-3 col-md">
-          <h2>Scott Quotes</h2>
+          <h2 className="d-f jc-c category-style">Scott Quotes</h2>
           {scottQuoteQuestions.map((question, index) => (
             <Card
               key={question.id}
@@ -130,7 +130,7 @@ export default function GameBoard() {
           ))}
         </div>
         <div className="col-3 col-md">
-          <h2>Buzzwords</h2>
+          <h2 className="d-f jc-c category-style">Buzzwords</h2>
           {buzzWordQuestions.map((question, index) => (
             <Card
               key={question.id}
@@ -142,7 +142,7 @@ export default function GameBoard() {
           ))}
         </div>
         <div className="col-3 col-md">
-          <h2>Class Quotes</h2>
+          <h2 className="d-f jc-c category-style">Class Quotes</h2>
           {classQuestions.map((question, index) => (
             <Card
               key={question.id}
@@ -154,7 +154,7 @@ export default function GameBoard() {
           ))}
         </div>
         <div className="col-3 col-md">
-          <h2>Grab Bag</h2>
+          <h2 className="d-f jc-c category-style">Grab Bag</h2>
           {grabBagQuestions.map((question, index) => (
             <Card
               key={question.id}
