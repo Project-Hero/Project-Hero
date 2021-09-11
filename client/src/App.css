@@ -58,6 +58,17 @@
   padding: 10 px;
 }
 
+.nav-brand {
+  font-size: 200%;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 120%;
+  font-family: monospace;
+}
+
 .category-style {
   background-color: black;
   color: #ffc107;
