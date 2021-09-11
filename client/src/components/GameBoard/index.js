@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "@apollo/client";
 import Spinner from "react-bootstrap/Spinner";
 
-import MyCard from "./../Card/cardIndex";
+import Card from "./../Card/index";
 import { QUERY_QUESTIONS } from "../../utils/queries";
 import PointCounter from "./../PointCounter";
 import KeysPressed from "./../KeysPressed";
@@ -12,13 +12,19 @@ let guessedKeys = [];
 let activeQuestion = {};
 
 function Test(props) {
-  return <div>{props.blanksLetters.map(character => {
-    if (character === "    ") {
-      return <span>{character}&nbsp;&nbsp;</span>;
-    } else {
-      return <span>{character}</span>;
-    }
-  })}</div>;
+  return (
+    <div className="d-f jc-c">
+      <div>
+        {props.blanksLetters.map((character) => {
+          if (character === "    ") {
+            return <span className="blank-text">{character}&nbsp;&nbsp;</span>;
+          } else {
+            return <span className="blank-text">{character}</span>;
+          }
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default function GameBoard() {
@@ -133,7 +139,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Scott Quotes</h2>
           {scottQuoteQuestions.map((question, index) => (
-            <MyCard
+            <Card
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -145,7 +151,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Buzzwords</h2>
           {buzzWordQuestions.map((question, index) => (
-            <MyCard
+            <Card
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -157,7 +163,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Class Quotes</h2>
           {classQuestions.map((question, index) => (
-            <MyCard
+            <Card
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}
@@ -169,7 +175,7 @@ export default function GameBoard() {
         <div className="col-3 col-md">
           <h2 className="d-f jc-c category-style">Grab Bag</h2>
           {grabBagQuestions.map((question, index) => (
-            <MyCard
+            <Card
               key={question.id}
               question={question}
               handleBlanks={handleBlanks}

@@ -87,13 +87,13 @@
   flex-direction: column;
 }
 
-.hero {
+/* .hero {
   background-image: url("https://avatars.githubusercontent.com/u/955212?v=4");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
+} */
 
 .blank-text {
   font-size: xx-large;
