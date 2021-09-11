@@ -51,7 +51,6 @@ export default function GameBoard() {
     for (var i = 0; i < phrase.length; i++) {
       if (phrase[i] === ' ') {
         blanksLetters.push("    ");
-        console.log(phrase[i]);
       } else {
         blanksLetters.push("_  ");
       }
