@@ -6,6 +6,8 @@ const typeDefs = gql`
     category: String
     phrase: String
     value: Int
+    img: String
+    hint: String
   }
 
   type Query {

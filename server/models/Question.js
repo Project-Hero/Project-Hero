@@ -12,7 +12,13 @@ const questionSchema = new Schema({
   },
   value: {
     type: Number,
-    },
+  },
+  img: {
+    type: String,
+  },
+  hint: {
+    type: String,
+  },
 });
 
 const Question = model("Question", questionSchema);
