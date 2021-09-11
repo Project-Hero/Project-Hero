@@ -13,21 +13,41 @@ export const MyNavbar = () => {
         className="justify-content-between"
       >
         <Container>
-          <Navbar.Brand className="nav-brand" href="https://project-hero-jwh.herokuapp.com/">
+          <Navbar.Brand
+            className="nav-brand"
+            href="https://project-hero-jwh.herokuapp.com/"
+          >
             No Dork Left Behind
           </Navbar.Brand>
           <Nav className="ml-auto">
-            <Nav.Link className="nav-link" href="https://project-hero-jwh.herokuapp.com/">
+            <Nav.Link
+              className="nav-link"
+              href="https://project-hero-jwh.herokuapp.com/"
+            >
               Home
             </Nav.Link>
-            <Nav.Link className="nav-link" href="https://github.com/sbrunswig">
+            <Nav.Link
+              className="nav-link"
+              href="https://github.com/sbrunswig"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               The Man the Myth the Legend
             </Nav.Link>
-            <Nav.Link className="nav-link" href="https://github.com/Project-Hero/Project-Hero">
+            <Nav.Link
+              className="nav-link"
+              href="https://github.com/Project-Hero/Project-Hero"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub Docs
             </Nav.Link>
-            <Nav.Link className="nav-link" href="v2.0">Tip Developers</Nav.Link>
-            <Nav.Link className="nav-link" href="v2.0">Log In</Nav.Link>
+            <Nav.Link className="nav-link" href="v2.0">
+              Tip Developers
+            </Nav.Link>
+            <Nav.Link className="nav-link" href="v2.0">
+              Log In
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
