@@ -16,11 +16,9 @@ With presentation to our Northwestern Coding Bootcamp instructors, TAs and class
   - [Credits](#credits)
   - [License](#license)
 
-## Installation
-  In order to run this code, the user must ... 
+## Installation/Usage
+  In order to run this code, the user must visit the deployed site
 
-## Usage
-  In order to use this application, the user must...
 
 ## Credits
   First credit goes to project collaborators Tiffany Deakin, Jason Hsieh, Tyree Nettles, Connor Scornaienchi, and Brian Walters, for their hardwork, time, and tenacity putting this game together. Additional and HUGE thanks go to our instructor and TAs for their assistance, encouragment, and patience as we worked our way through developing the code of this project, as well as all bootcamp long.  
