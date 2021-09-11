@@ -8,7 +8,7 @@ db.once("open", async () => {
     {
       _id: "1",
       category: "Scott Quotes",
-      phrase: "SHAREYOURSCREEN",
+      phrase: "SHARE YOUR SCREEN",
       value: 200,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -16,7 +16,7 @@ db.once("open", async () => {
     {
       _id: "2",
       category: "Scott Quotes",
-      phrase: "QUOTESAROUNDTHEKEYS",
+      phrase: "QUOTES AROUND THE KEYS",
       value: 400,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -24,7 +24,7 @@ db.once("open", async () => {
     {
       _id: "3",
       category: "Scott Quotes",
-      phrase: "KEYVALUE",
+      phrase: "KEY VALUE",
       value: 600,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -32,7 +32,7 @@ db.once("open", async () => {
     {
       _id: "4",
       category: "Scott Quotes",
-      phrase: "LASTSPINOFTHENIGHT",
+      phrase: "LAST SPIN OF THE NIGHT",
       value: 800,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -40,7 +40,7 @@ db.once("open", async () => {
     {
       _id: "5",
       category: "Scott Quotes",
-      phrase: "WHOSEDOGISTHAT",
+      phrase: "WHOSE DOG IS THAT",
       value: 1000,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -72,7 +72,7 @@ db.once("open", async () => {
     {
       _id: "9",
       category: "Class Quotes",
-      phrase: "DORKCODE",
+      phrase: "DORK CODE",
       value: 800,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -80,7 +80,7 @@ db.once("open", async () => {
     {
       _id: "10",
       category: "Class Quotes",
-      phrase: "TRAVERSETHEDOM",
+      phrase: "TRAVERSE THE DOM",
       value: 1000,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -104,7 +104,7 @@ db.once("open", async () => {
     {
       _id: "13",
       category: "Grab Bag",
-      phrase: "MACVSPC",
+      phrase: "MAC VS PC",
       value: 600,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -120,7 +120,7 @@ db.once("open", async () => {
     {
       _id: "15",
       category: "Grab Bag",
-      phrase: "FULLSTACK",
+      phrase: "FULL STACK",
       value: 1000,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -152,7 +152,7 @@ db.once("open", async () => {
     {
       _id: "19",
       category: "Bootcamp Buzzwords",
-      phrase: "BOXTOPS",
+      phrase: "BOX TOPS",
       value: 800,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
@@ -160,7 +160,7 @@ db.once("open", async () => {
     {
       _id: "20",
       category: "Bootcamp Buzzwords",
-      phrase: "DAVIDBLAINE",
+      phrase: "DAVID BLAINE",
       value: 1000,
       img: "../../client/src/assets/share.png",
       hint: "you know what to do",
