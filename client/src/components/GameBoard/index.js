@@ -191,10 +191,10 @@ export default function GameBoard() {
         className="blank-text"
       />
       <div>
-        <PointCounter score={score} />
+        <KeysPressed key={updatedAt} guessedKeys={guessedKeys} />
       </div>
       <div>
-        <KeysPressed key={updatedAt} guessedKeys={guessedKeys} />
+        <PointCounter score={score} />
       </div>
     </>
   );
